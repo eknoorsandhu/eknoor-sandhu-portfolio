@@ -3,11 +3,10 @@ layout: default
 is_contact: true
 ---
 
-* Email: [asandhu@olin.edu](mailto:asandhu@olin.edu)
+* Email: [eknoorksandhu@gmail.com](mailto:eknoorksandhu@gmail.com)
 
 ---
 
 ## Social
 
-1. [LinkedIn](https://www.linkedin.com/in/anmolrattansinghsandhu/)
-2. [GitHub](https://github.com/AnmolRattanSingh)
+1. [GitHub](https://github.com/eknoorsandhu)
