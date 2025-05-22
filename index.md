@@ -4,7 +4,7 @@ layout: default
 
 ## About Me
 
-<img class="profile-picture" src="profile.jpeg" alt="A picture of Eknoor Kaur Sandhu">
+<img class="profile-picture" src="profile.jpg" alt="A picture of Eknoor Kaur Sandhu">
 
 Hello! I am Eknoor Kaur Sandhu.
 
