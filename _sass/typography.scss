@@ -1,6 +1,26 @@
 @import "vars";
 
 .content {
+    .about-intro {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        margin-bottom: 1.5rem;
+
+        @media (max-width: $small-width) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+
+    .about-intro-copy {
+        flex: 1;
+    }
+
+    .about-intro-copy p {
+        margin: 0;
+    }
+
     a:hover {
         text-decoration: none;
     }
@@ -39,24 +59,21 @@
     .profile-picture {
         height: $profile-image-size;
         width: $profile-image-size;
-        position: relative;
-        margin: -10px 0 0 15px;
-        float: right;
+        flex-shrink: 0;
         border-radius: 50%;
+        object-fit: cover;
         p & {
             padding: 0;
             margin: 0;
         }
         @media (max-width: $small-width) {
-            img {
-                margin-top: -5px;
-            }
-            height: 85px;
-            width: auto;
+            height: 120px;
+            width: 120px;
         }
     }
     img {
         text-align: center;
-        width: 100%;
+        max-width: 100%;
+        height: auto;
     }
 }
