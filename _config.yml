@@ -1,6 +1,7 @@
 title: Eknoor Kaur Sandhu
 url: "https://eknoor.xyz"
 baseurl: ""
+description: "Research, projects and community work across biology, mathematics, AI and economics."
 
 markdown: kramdown
 #ins_logo: "./bits-logo.png"
@@ -16,15 +17,3 @@ sass:
 collections:
   projects:
     output: true
-
-nav:
-    - name: "About"
-      link: ""
-    - name: "Resume"
-      link: "resume"
-    - name: "Projects"
-      link: "projects"
-    - name: "Research"
-      link: "research"
-    - name: "Contact"
-      link: "contact"

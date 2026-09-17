@@ -1,103 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
-
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="keywords" content="blog, accent, {{ site.author }}, {{ site.title }}, jekyll">
-    <meta name="author" content="{{ site.author }}">
-    {% if page.url == "/404.html" %}
-    <meta http-equiv="refresh" content="5; url=/">
-    {% endif %}
-    {% if page.description %}
-    {% assign desc = page.description %}
-    {% else %}
-    {% assign desc = site.description %}
-    {% endif %}
-    {% if page.url %}
-    {% assign url = site.url | append: site.baseurl | append: page.url %}
-    {% else %}
-    {% assign url = site.url | append: site.baseurl | append: page.url %}
-    {% endif %}
-    <meta name="description" content="{{ desc }}">
-    <link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
-    <link rel="alternate" type="application/rss+xml" title="{{ site.title }} RSS" href="/feed.xml" />
+    <title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}</title>
+    <meta name="description" content="{{ page.description | default: site.description }}">
+    <meta name="author" content="{{ site.title }}">
+    <meta property="og:title" content="{{ site.title }}">
+    <meta property="og:description" content="{{ page.description | default: site.description }}">
+    <meta property="og:url" content="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="{{ site.url }}{{ site.baseurl }}/assets/images/eknoor.jpg">
     <link rel="stylesheet" href="{{ site.baseurl }}/css/main.css">
-    {% if site.favicon %}
-    <link rel="icon" type="image/ico" href="{{ site.favicon_location }}">
-    <link rel="shortcut-icon" type="image/ico" href="{{ site.favicon_location }}">
-    {% endif %}
-    {% if site.twitter_username %}
-    <link rel="author" href="https://twitter.com/{{ site.twitter_username }}">
-    {% endif %}
-    <!-- Facebook Open Graph -->
-    <meta name="og:description" content="{{ desc }}">
-    <meta name="og:title" content="{{ site.title }}">
-    <meta name="og:url" content="{{ url }}">
-    <meta name="og:type" content="article">
-    {% if site.og_image %}
-    <meta name="og:image" content="{{ site.og_image }}">
-    {% endif %}
-    {% if site.facebook_id %}
-    <meta name="fb:admins" content="{{ site.facebook_id }}">
-    {% endif %}
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon_io/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon_io/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon_io/favicon-16x16.png" />
-    <link rel="manifest" href="/favicon_io/site.webmanifest" />
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HSZSJCBXPR"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-HSZSJCBXPR');
-    </script>
-</head>
-
-<body>
-    <div class="wrapper">
-        <div class="navbar container">
-            {% if site.ins_logo %}
-            <img id="ins-logo" src="{{ site.ins_logo }}" />
-            {% endif %}
-            <a id="author-name" class="alignable pull-left" href="{{ site.url }}{{ site.baseurl }}">Eknoor Kaur Sandhu</a>
-            <ul id="navlist" class="alignable pull-right navbar-ul">
-                {% for x in site.nav %}
-                <li class="alignable pull-left nav-list">
-                  {% if x.name == "Resume" or x.link contains "http" %}
-                    <!-- For external links (like Resume), just use x.link directly. -->
-                    <a target="_blank" href="{{ x.link }}">{{ x.name }}</a>
-                  {% else %}
-                    <!-- For internal links, prepend site.baseurl and a slash. -->
-                    <a href="{{ site.baseurl }}/{{ x.link }}">{{ x.name }}</a>
-                  {% endif %}
-              
-                  {% unless forloop.last %}
-                    /
-                  {% endunless %}
-                </li>
-                {% endfor %}
-              </ul>
-        </div>
-        <!-- <hr> -->
-        {% if page.is_contact == true %}
-        <div class="container content contact">
-            {% else %}
-            <div class="container content">
-                {% endif %}
-                {{ content }}
-                {% if site.footer == true %}
-                <hr />
-                <p style="text-align: center; margin-bottom: 10px">
-                    <a href="{{ site.footer_url }}" style="color: black"><small>{{ site.footer_text }}</small></a>
-                </p>
-                {% endif %}
-            </div>
-        </div>
-</body>
-<footer>
-</footer>
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ site.baseurl }}/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ site.baseurl }}/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ site.baseurl }}/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="{{ site.baseurl }}/favicon_io/site.webmanifest">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap site-header__inner">
+        <a class="site-name" href="{{ site.baseurl }}/">Eknoor Kaur Sandhu</a>
+        <nav aria-label="Main navigation">
+          <ul class="site-nav">
+            <li><a href="{{ site.baseurl }}/#about">About</a></li>
+            <li><a href="{{ site.baseurl }}/#research">Research</a></li>
+            <li><a href="{{ site.baseurl }}/#projects">Projects</a></li>
+            <li><a href="{{ site.baseurl }}/#community">Community</a></li>
+            <li><a href="{{ site.baseurl }}/#art">Art</a></li>
+            <li><a href="{{ site.baseurl }}/Eknoor-Sandhu-Resume.pdf">Resume</a></li>
+            <li><a href="{{ site.baseurl }}/#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+      {{ content }}
+    </main>
+    <footer id="contact" class="site-footer">
+      <div class="wrap">
+        <h2>Get in touch</h2>
+        <ul class="footer-links">
+          <li><a href="mailto:eknoorksandhu@gmail.com">eknoorksandhu@gmail.com</a></li>
+          <li><a href="https://github.com/eknoorsandhu">GitHub</a></li>
+          <li><a href="{{ site.baseurl }}/Eknoor-Sandhu-Resume.pdf">Resume (PDF)</a></li>
+        </ul>
+        <small>Chandigarh, India</small>
+      </div>
+    </footer>
+    <script src="{{ site.baseurl }}/assets/site.js" defer></script>
+  </body>
+</html>
