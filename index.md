@@ -17,17 +17,27 @@ performance_youtube_id: "XETqyZgy1IA"
 </header>
 
 <section id="about">
-  <div class="wrap section-grid">
-    <h2>About</h2>
-    <div class="prose">
-      <p>After Grade 10, I changed schools so I could study four subjects together:</p>
-      <ul class="subjects" aria-label="Subjects I study">
-        <li>Biology</li>
-        <li>Mathematics</li>
-        <li>Artificial Intelligence</li>
-        <li>Economics</li>
-      </ul>
-      <p>I'm Head Girl of my school and President of the Environment Club. Outside school, I do research with Plaksha University and volunteer with APSWDP, a social-work organisation in Chandigarh. I speak English, Punjabi, Hindi and French.</p>
+  <div class="wrap about-grid">
+    <div class="about-copy">
+      <h2>About</h2>
+      <div class="prose">
+        <p>After Grade 10, I changed schools so I could study four subjects together:</p>
+        <ul class="subjects" aria-label="Subjects I study">
+          <li>Biology</li>
+          <li>Mathematics</li>
+          <li>Artificial Intelligence</li>
+          <li>Economics</li>
+        </ul>
+        <p>I'm Head Girl of my school and President of the Environment Club. Outside school, I do research with Plaksha University and volunteer with APSWDP, a social-work organisation in Chandigarh. I speak English, Punjabi, Hindi and French.</p>
+      </div>
+    </div>
+    <div class="performance" id="performance" role="region" aria-labelledby="performance-title">
+      <h2 id="performance-title">My performance at the Kala Mahotsava 2026 in Chandigarh</h2>
+      {% if page.performance_youtube_id != "" %}
+      <iframe class="performance-video" src="https://www.youtube-nocookie.com/embed/{{ page.performance_youtube_id | escape }}" title="Kathak performance at the Kala Mahotsava 2026 in Chandigarh" width="960" height="540" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      {% else %}
+      <p class="performance-pending">Video coming soon.</p>
+      {% endif %}
     </div>
   </div>
 </section>
@@ -48,8 +58,8 @@ performance_youtube_id: "XETqyZgy1IA"
         <p class="where">Research intern, DronaMaps, with Plaksha University</p>
         <p>A method for tracing crop rows and spotting missing plants in ordinary drone photos, built for small farms where rows run in different directions. Fieldwork: drone surveys and ground checks in Muzaffarnagar, Uttar Pradesh. On 11 test fields, it found 79% of rows; a standard method found 9%.</p>
         <figure class="rows-figure">
-          <svg id="field-rows" viewBox="0 0 640 300" role="img" aria-label="Drawing of crop rows with a gap where plants are missing"></svg>
-          <figcaption>A gap in a row where plants are missing.</figcaption>
+          <img src="{{ site.baseurl }}/assets/images/fields.jpeg" alt="Aerial photograph of sugarcane rows with yellow row lines and gaps marked in red" loading="lazy" width="1067" height="782">
+          <figcaption>Sugarcane rows traced in yellow, with gaps marked in red.</figcaption>
         </figure>
         <span class="status">Co-author · Presented at ICA 2026, Ropar · Under review</span>
         <ul class="tags"><li data-tag="ai">AI</li><li data-tag="biology">Biology</li></ul>
@@ -106,17 +116,6 @@ performance_youtube_id: "XETqyZgy1IA"
         <p>I've trained in Kathak, a classical Indian dance, for seven years, and have held the national scholarship since Grade 9. As Dance Club President, I also train younger dancers.</p>
       </li>
     </ol>
-  </div>
-</section>
-
-<section id="performance" aria-labelledby="performance-title">
-  <div class="wrap performance">
-    <h2 id="performance-title">My performance at the Kala Mahotsava 2026 in Chandigarh</h2>
-    {% if page.performance_youtube_id != "" %}
-    <iframe class="performance-video" src="https://www.youtube-nocookie.com/embed/{{ page.performance_youtube_id | escape }}" title="Kathak performance at the Kala Mahotsava 2026 in Chandigarh" width="960" height="540" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    {% else %}
-    <p class="performance-pending">Video coming soon.</p>
-    {% endif %}
   </div>
 </section>
 

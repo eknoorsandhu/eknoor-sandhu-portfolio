@@ -31,9 +31,9 @@ p { margin: 0 0 1em; }
 
 .hero { border-bottom: 1px solid var(--line); }
 .hero-grid { display: grid; grid-template-columns: 1fr minmax(16rem, 24rem); gap: 3rem; align-items: center; padding-top: 3.5rem; padding-bottom: 4rem; }
-.hero-inner { max-width: 38rem; }
-.hero h1 { font-size: clamp(2.6rem, 6.5vw, 4.5rem); letter-spacing: -.03em; }
-.hero .lede { max-width: 34rem; margin-top: 1.25rem; color: var(--muted); font-size: 1.25rem; }
+.hero-inner { min-width: 0; }
+.hero h1 { max-width: 38rem; font-size: clamp(2.6rem, 6.5vw, 4.5rem); letter-spacing: -.03em; }
+.hero .lede { margin-top: 1.25rem; color: var(--muted); font-size: 1.25rem; }
 .hero .place { margin-top: 2rem; color: var(--muted); font-size: 1.0625rem; }
 .hero-photo { display: block; width: 100%; aspect-ratio: 4 / 5; border-radius: 3px; object-fit: cover; }
 
@@ -41,6 +41,8 @@ section { padding: 4.5rem 0; border-bottom: 1px solid var(--line); scroll-margin
 .section-grid { display: grid; grid-template-columns: 14rem 1fr; gap: 2.5rem; }
 .section-grid > h2 { font-size: 1.75rem; }
 .prose, .art-intro { max-width: 40rem; }
+.about-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 2.5rem; }
+.about-copy > h2 { margin-bottom: 1.5rem; font-size: 1.75rem; }
 
 .subjects { display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; margin: 1.25rem 0 1.5rem; padding: 0 0 0 1rem; list-style: disc; }
 .subjects li { padding-left: .15rem; color: var(--ink); font-size: 1.0625rem; }
@@ -52,15 +54,14 @@ section { padding: 4.5rem 0; border-bottom: 1px solid var(--line); scroll-margin
 .entry h3 { margin-bottom: .35rem; font-size: 1.35rem; }
 .entry .where { margin-bottom: .75rem; color: var(--muted); font-size: 1.0625rem; }
 .entry p:last-of-type { margin-bottom: .75rem; }
-.status { display: block; margin: .25rem 0 .75rem; padding-left: .6rem; border-left: 3px solid var(--gold); color: var(--green); font-size: 1rem; font-weight: 600; }
+.status { display: block; margin: 1.25rem 0 1rem; color: var(--ink); font-size: 1.0625rem; font-style: italic; font-weight: 500; }
+.status::before { content: ""; display: block; width: 2rem; height: 2px; margin-bottom: .6rem; background: var(--ink); }
 .tags { display: flex; flex-wrap: wrap; gap: .4rem; margin: 0; padding: 0; list-style: none; }
-.tags li { padding: .05rem .6rem; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); font-size: .875rem; }
+.tags li { padding: .2rem .6rem; border: 1px solid var(--line); border-radius: 0; background: var(--panel); color: var(--muted); font-size: .875rem; }
 .code-link { font-size: .95rem; font-weight: 600; }
 
 .rows-figure { max-width: 24rem; margin: .25rem 0 1rem; }
-.rows-figure svg { display: block; width: 100%; height: auto; }
-.rows-figure .plant { stroke: var(--green); stroke-linecap: round; stroke-width: 4; opacity: .6; }
-.rows-figure .gap { fill: none; stroke: var(--gold); stroke-width: 2.5; }
+.rows-figure img { display: block; width: 100%; height: auto; }
 .rows-figure figcaption { margin-top: .25rem; color: var(--muted); font-size: .85rem; }
 
 /* Existing project cards remain the source of truth for projects. */
@@ -76,7 +77,8 @@ section { padding: 4.5rem 0; border-bottom: 1px solid var(--line); scroll-margin
 .github-link:hover { background: var(--green); color: white; }
 .github-link svg { margin-right: .35rem; vertical-align: -.25em; }
 
-.performance { max-width: 60rem; }
+.performance { position: relative; min-width: 0; scroll-margin-top: 1rem; }
+.performance::before { content: ""; position: absolute; top: -1.25rem; left: 0; width: 100%; height: 1px; background: var(--line); }
 .performance h2 { margin-bottom: 1.5rem; font-size: 1.35rem; }
 .performance-video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; border: 0; border-radius: 3px; }
 .performance-pending { margin: 0; color: var(--muted); }
@@ -105,6 +107,21 @@ dialog.art-viewer p { margin: .75rem 0 0; color: #e4ebe7; text-align: center; fo
 .site-footer h2 { margin-bottom: 1rem; font-size: 1.75rem; }
 .footer-links { gap: .5rem 2rem; font-size: 1.15rem; }
 .site-footer small { display: block; margin-top: 2.5rem; color: var(--muted); }
+
+@media (min-width: 1024px) {
+  body { font-size: 1.375rem; }
+  .site-nav { font-size: 1.0625rem; }
+  .hero .lede { font-size: 1.5rem; }
+  .hero .place, .subjects li, .entry .where, .status { font-size: 1.1875rem; }
+  .section-grid > h2, .about-copy > h2, .site-footer h2 { font-size: 2rem; }
+  .about-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 3rem; }
+  .performance::before { top: 0; bottom: 0; left: -1.5rem; width: 1px; height: auto; }
+  .entry h3 { font-size: 1.625rem; }
+  .project-info h3, .performance h2 { font-size: 1.5rem; }
+  .tags li, .rows-figure figcaption { font-size: 1rem; }
+  .art-title { font-size: 1.25rem; }
+  .art-medium { font-size: 1.125rem; }
+}
 
 @media (max-width: 960px) { .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 760px) {

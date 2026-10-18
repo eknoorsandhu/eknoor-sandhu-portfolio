@@ -1,6 +1,8 @@
 services:
   jekyll:
     build: .
+    environment:
+      BUNDLE_JOBS: "1"
     volumes:
       - .:/site
     ports:
