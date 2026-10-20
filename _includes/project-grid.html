@@ -1,6 +1,7 @@
 <!-- In _includes/project-grid.html -->
 <div class="project-grid">
-    {% for project in site.projects %}
+    {% assign projects = site.projects | sort: "order" %}
+    {% for project in projects %}
     <div class="project-card">
         <div class="project-image">
             <img src="{{ project.image }}" alt="{{ project.title }}">

@@ -2,7 +2,7 @@
 layout: default
 description: Research, projects and community work across biology, mathematics, AI and economics.
 # Set this to the ID after v= or youtu.be/ in the YouTube link.
-performance_youtube_id: "XETqyZgy1IA"
+performance_youtube_id: "r7FdLGWia_c"
 ---
 
 <header class="hero">
