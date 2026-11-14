@@ -21,6 +21,20 @@ columns on desktop, with the video on the right; below 1024px they stack.
 A thin divider between About and the performance is vertical on desktop and
 horizontal when stacked, matching the section separator color.
 
+### Images
+
+Below-the-fold images use `loading="lazy"`. Art gallery thumbnails live in
+`assets/images/art/thumbs/` at 480px and 800px wide (`<name>-480.jpg`,
+`<name>-800.jpg`) and are chosen via `srcset`; the viewer opens the original.
+For a new art piece, generate both sizes:
+
+```bash
+magick art/<name>.jpg -strip -resize '480x>' -quality 78 art/thumbs/<name>-480.jpg
+magick art/<name>.jpg -strip -resize '800x>' -quality 78 art/thumbs/<name>-800.jpg
+```
+
+Resize phone photos before adding them (e.g. `-resize 1600x1600\> -quality 80`).
+
 ### License
 
 [GNU GPL v3](https://github.com/bk2dcradle/researcher/blob/gh-pages/LICENSE)
