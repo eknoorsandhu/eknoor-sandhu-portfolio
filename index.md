@@ -50,18 +50,21 @@ performance_youtube_id: "r7FdLGWia_c"
         <h3>Silver nanoparticle–silk fibroin hydrogels for wound dressings</h3>
         <p class="where">Research intern, Plaksha University</p>
         <p>Hydrogels made from silk-cocoon protein were loaded with silver nanoparticles and tested against two types of bacteria. A low dose (50 µg/mL) worked about as well as a dose 500 times higher.</p>
-        <span class="status">First author · Manuscript under review, Journal of Emerging Investigators</span>
+        <span class="status">First author · Manuscript under review, Journal of Emerging Investigators<br>Poster presented at the International Conference on Advanced Materials and Devices for Futuristic Applications (IC&#8209;AMDFA&#8209;2026)</span>
+        <figure class="entry-figure">
+          <img src="{{ site.baseurl }}/assets/images/ic-amdfa-2026-poster.jpg" alt="Eknoor standing beside her poster, Silver Nanoparticle-laden Silk Fibroin Hydrogels Retain Antibacterial Activity at Low AgNP Concentrations" loading="lazy" width="1280" height="960">
+        </figure>
         <ul class="tags"><li data-tag="biology">Biology</li></ul>
       </li>
       <li class="entry" data-subjects="ai biology">
         <h3>Finding gaps in sugarcane rows from drone photos</h3>
         <p class="where">Research intern, DronaMaps, with Plaksha University</p>
         <p>A method for tracing crop rows and spotting missing plants in ordinary drone photos, built for small farms where rows run in different directions. Fieldwork: drone surveys and ground checks in Muzaffarnagar, Uttar Pradesh. On 11 test fields, it found 79% of rows; a standard method found 9%.</p>
-        <figure class="rows-figure">
+        <figure class="entry-figure">
           <img src="{{ site.baseurl }}/assets/images/fields.jpeg" alt="Aerial photograph of sugarcane rows with yellow row lines and gaps marked in red" loading="lazy" width="1067" height="782">
           <figcaption>Sugarcane rows traced in yellow, with gaps marked in red.</figcaption>
         </figure>
-        <span class="status">Co-author · Presented at ICA 2026, Ropar · Under review</span>
+        <span class="status">Co-author · Presented at the International Conference on Agriculture-Centric Computation (ICA-2026) · Under review</span>
         <ul class="tags"><li data-tag="ai">AI</li><li data-tag="biology">Biology</li></ul>
       </li>
       <li class="entry" data-subjects="economics ai biology">

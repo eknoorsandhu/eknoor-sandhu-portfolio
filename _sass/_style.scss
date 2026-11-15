@@ -63,9 +63,9 @@ section { padding: 4.5rem 0; border-bottom: 1px solid var(--line); scroll-margin
 .entry-photos { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem; max-width: 44rem; margin: 0 0 .75rem; }
 .entry-photos img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 3px; }
 
-.rows-figure { max-width: 24rem; margin: .25rem 0 1rem; }
-.rows-figure img { display: block; width: 100%; height: auto; }
-.rows-figure figcaption { margin-top: .25rem; color: var(--muted); font-size: .85rem; }
+.entry-figure { max-width: 24rem; margin: .25rem 0 1rem; }
+.entry-figure img { display: block; width: 100%; height: auto; }
+.entry-figure figcaption { margin-top: .25rem; color: var(--muted); font-size: .85rem; }
 
 /* Existing project cards remain the source of truth for projects. */
 .project-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; padding: 0; }
@@ -121,7 +121,7 @@ dialog.art-viewer p { margin: .75rem 0 0; color: #e4ebe7; text-align: center; fo
   .performance::before { top: 0; bottom: 0; left: -1.5rem; width: 1px; height: auto; }
   .entry h3 { font-size: 1.625rem; }
   .project-info h3, .performance h2 { font-size: 1.5rem; }
-  .tags li, .rows-figure figcaption { font-size: 1rem; }
+  .tags li, .entry-figure figcaption { font-size: 1rem; }
   .art-title { font-size: 1.25rem; }
   .art-medium { font-size: 1.125rem; }
 }
